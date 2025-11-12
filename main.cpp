@@ -3,14 +3,18 @@
 
 #include "matrix.h"
 #include "logger.h"
+#include "reader.h"
 #include "matrix_logger.h"
+#include "matrix_reader.h"
 
 int main()
 {
-    Matrix mat1(3, 3);
+    Matrix mat(3, 3);
     Logger log(std::string("matrix.txt"));
 
-    log << mat1;
+    log << mat;
 
+    Reader r1("matrix.txt");
+    r1 >> mat;
     return 0;
 }
